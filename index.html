@@ -5,14 +5,20 @@
     <title>East RogueLike Game</title>
     <meta charset="utf-8" />
     <script type="text/javascript">
+     var SCR_WIDTH = 800;
+     var SCR_HEIGHT = 550;
+
+     function clearScreen() {
+       var screen = document.getElementById("main_screen");
+       var context = screen.getContext("2d");
+       context.fillStyle="#000000";
+       context.fillRect(0, 0, SCR_WIDTH, SCR_HEIGHT);
+     }
+
      function showTitle() {
        var screen = document.getElementById("main_screen");
        var context = screen.getContext("2d");
        context.fillStyle="#FFFF00";
-       /* context.fillRect(0, 0, 800, 500);
-       window.status='Screen Cleared.'; */
-       var screen = document.getElementById("main_screen");
-       var context = screen.getContext("2d");
        context.font = "80px simsun";
        context.fillText("东方游侠", 240, 200);
      }
@@ -26,9 +32,9 @@
     </canvas>
     </p>
     <p style="text-align:center;">
-    <input type="button" value="StartGame">
+    <input type="button" value="StartGame" onclick="clearScreen();">
     <input type="button" value="SaveGame">
-    <input type="button" value="Exit">
+    <input type="button" value="Exit" onclick="javascript:window.close()">
     </p>
   </body>
 </html>
